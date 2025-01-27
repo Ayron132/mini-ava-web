@@ -18,7 +18,7 @@ import {
   BackButton,
   ErrorMessage,
 } from './style';
-import NavBar from './components/NavBar';
+import NavBar from '../../components/NavBar';
 
 function Posts() {
   const { id } = useParams();
@@ -102,10 +102,10 @@ function Posts() {
 
   return (
     <PostsPage>
-      <NavBar
-        user={user && user.data}
-        signOut={handleSignOut}
+       <NavBar
+        user={user}
         handleShowCreatePostModal={() => setCreatePostModalOpen(true)}
+        signOut={handleSignOut}
       />
       {loading && <p>Carregando postagens...</p>}
       {error && <ErrorMessage>{error}</ErrorMessage>}
